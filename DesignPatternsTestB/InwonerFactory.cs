@@ -4,23 +4,16 @@ namespace DesignPatternsTestB
 {
     public class InwonerFactory
     {
-        private static InwonerFactory deInwoners;
+        private static InwonerFactory deInwoners = new InwonerFactory();
 
         private InwonerFactory()
         {
 
         }
 
-        public static InwonerFactory GetInstance()
-        {
-            if (deInwoners == null)
-            {
-                deInwoners = new InwonerFactory();
-            }
-
-            return deInwoners;
-        }
-        public IInwoner maakInwoner(string regel)
+        public static InwonerFactory GetInstance() => deInwoners;
+        
+        public IInwoner MaakInwoner(string regel)
         {
             char letter = Convert.ToChar(regel.Substring(0, 1).ToUpper());
             string naam = regel.Substring(2);

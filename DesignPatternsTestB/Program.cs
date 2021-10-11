@@ -15,7 +15,7 @@ namespace DesignPatternsTestB
                 using StreamReader reader = new StreamReader("inwoners.txt");
                 while ((regel = reader.ReadLine()) != null)
                 {
-                    eiland.AddInwoner(factory.maakInwoner(regel));
+                    eiland.AddInwoner(factory.MaakInwoner(regel));
                 }
                 eiland.DeleteInwoner(1);
                 eiland.vulkaan.Uitbarsten();
